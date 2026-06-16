@@ -1,0 +1,189 @@
+.visit-hero {
+  position: relative;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(160deg, #FEF0F5 0%, #FAD6E8 50%, #F5C0D8 100%);
+  overflow: hidden;
+}
+
+.visit-grain {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.6;
+  animation: grain 8s steps(10) infinite;
+  pointer-events: none;
+}
+
+.visit-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.4) 0%, transparent 50%),
+    radial-gradient(circle at 15% 80%, rgba(250,200,218,0.5) 0%, transparent 45%);
+}
+
+.visit-hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 130px;
+  padding-bottom: 80px;
+}
+
+.visit-hero-title {
+  font-size: clamp(42px, 7vw, 90px);
+  font-weight: 900;
+  color: #3D1A26;
+  margin-bottom: 18px;
+  line-height: 1.05;
+}
+
+.visit-hero-sub {
+  font-size: 18px;
+  color: #7A4050;
+  max-width: 460px;
+}
+
+/* Info cards */
+.visit-info-section {
+  background: #FFF8FA;
+  padding: 0 0 96px;
+}
+
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.info-card {
+  background: #fff;
+  border: 1.5px solid rgba(240,147,176,0.18);
+  border-radius: 16px;
+  padding: 36px 30px;
+  box-shadow: 0 4px 20px rgba(240,147,176,0.1);
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.4s ease,
+              border-color 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(240,147,176,0.45);
+  box-shadow: 0 24px 60px rgba(240,147,176,0.22);
+}
+
+.info-card-icon {
+  font-size: 36px;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+
+.info-card-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #E06A90;
+  margin-bottom: 16px;
+}
+
+.info-card-content p {
+  font-size: 15px;
+  color: #5A2535;
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+
+.hours-main {
+  font-size: 18px !important;
+  font-weight: 700;
+  color: #3D1A26 !important;
+}
+
+.hours-time {
+  font-size: 22px !important;
+  font-family: 'Playfair Display', serif;
+  color: #E06A90 !important;
+  margin-bottom: 14px !important;
+}
+
+.hours-note {
+  font-size: 13px !important;
+  color: #B08090 !important;
+}
+
+.hours-peak {
+  font-size: 12px !important;
+  color: #F093B0 !important;
+  font-style: italic;
+}
+
+.contact-num {
+  font-size: 22px !important;
+  font-family: 'Playfair Display', serif;
+  color: #E06A90 !important;
+  margin-bottom: 8px !important;
+}
+
+.info-btn {
+  margin-top: 20px;
+  font-size: 14px;
+  padding: 10px 22px;
+}
+
+/* Map */
+.map-section {
+  background: #FFF8FA;
+  padding: 0 0 80px;
+}
+
+.map-wrapper {
+  border: 1.5px solid rgba(240,147,176,0.22);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(240,147,176,0.15);
+}
+
+/* Bottom CTA */
+.visit-cta {
+  background: linear-gradient(135deg, #FAC8DA 0%, #F093B0 60%, #E06A90 100%);
+  padding: 52px 0;
+}
+
+.visit-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.visit-cta-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 2.5vw, 30px);
+  color: #fff;
+  font-weight: 700;
+}
+
+.visit-cta .btn-primary {
+  background: #fff;
+  color: #E06A90;
+}
+.visit-cta .btn-primary:hover {
+  background: #FFF8FA;
+  box-shadow: 0 8px 28px rgba(180,60,100,0.25);
+}
+
+@media (max-width: 1024px) { .info-cards-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 768px) {
+  .visit-hero { min-height: auto; }
+  .visit-info-section { padding-bottom: 64px; }
+  .visit-cta-inner { flex-direction: column; text-align: center; }
+  .info-cards-grid { grid-template-columns: 1fr; gap: 16px; }
+}
